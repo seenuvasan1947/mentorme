@@ -1,9 +1,11 @@
 // ignore_for_file: camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:mentorme/components/constant.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mentorme/components/language/lang_strings.dart';
 import 'package:mentorme/components/provider.dart';
 
 class postaddscreen extends StatefulWidget {
@@ -17,7 +19,7 @@ class _postaddscreenState extends State<postaddscreen> {
   late String mentor_name;
   late String mentor_email;
   late String mentor_domain;
-  
+
   final db = FirebaseFirestore.instance;
   Future<String?> adddata() async {
     FirebaseFirestore.instance.collection("posts").doc(mentor_email).set({
@@ -25,7 +27,6 @@ class _postaddscreenState extends State<postaddscreen> {
       'mentor_name': mentor_name,
       'mentor_email': mentor_email,
       'mentor_domain': mentor_domain,
-      
     });
     Navigator.of(context).pop();
   }
@@ -42,7 +43,7 @@ class _postaddscreenState extends State<postaddscreen> {
                 },
                 icon: Icon(Icons.close))
           ],
-          title: const Text('mentor post'),
+          title:  Text(AppLocale.Mentor_post.getString(context)),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -58,7 +59,7 @@ class _postaddscreenState extends State<postaddscreen> {
                     //Do something with the user input.
                   },
                   decoration: kTextFieldDecoration.copyWith(
-                      hintText: 'Enter your name.')),
+                      hintText: AppLocale.Enter_Your_Name.getString(context))),
               const SizedBox(
                 height: 30.0,
               ),
@@ -70,7 +71,7 @@ class _postaddscreenState extends State<postaddscreen> {
                     //Do something with the user input.
                   },
                   decoration: kTextFieldDecoration.copyWith(
-                      hintText: 'Enter your email.')),
+                      hintText:AppLocale.Enter_Your_Email.getString(context))),
               const SizedBox(
                 height: 30.0,
               ),
@@ -82,16 +83,15 @@ class _postaddscreenState extends State<postaddscreen> {
                     //Do something with the user input.
                   },
                   decoration: kTextFieldDecoration.copyWith(
-                      hintText: 'Enter your domain.')),
+                      hintText: AppLocale.Enter_Your_Domain.getString(context))),
               const SizedBox(
                 height: 30.0,
               ),
-              
               ElevatedButton(
                   onPressed: () {
                     adddata();
                   },
-                  child: Text('save')),
+                  child: Text(AppLocale.Save.getString(context))),
             ],
           ),
         ),

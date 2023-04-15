@@ -2,11 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:mentorme/components/constant.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mentorme/components/language/lang_select.dart';
+import 'package:mentorme/components/language/lang_strings.dart';
 import 'package:mentorme/components/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
+
 class mypostlist extends StatefulWidget {
   const mypostlist({super.key});
 
@@ -18,52 +22,30 @@ class _mypostlistState extends State<mypostlist> {
   final db = FirebaseFirestore.instance;
   final prefs = SharedPreferences.getInstance();
 
-  Future<void> send(senderemail) async {
-    var rec_mail = senderemail;
-    final Email email = Email(
-      body: 'Hai respected mentor i am student and i need your help ',
-      subject: 'regarding communication in mentorme app',
-      recipients: [rec_mail],
-      isHTML: false,
-    );
-
-    String platformResponse;
-
-    try {
-      await FlutterEmailSender.send(email);
-      platformResponse = 'success';
-    } catch (error) {
-      print(error);
-      platformResponse = error.toString();
-    }
-
-    if (!mounted) return;
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(platformResponse),
-      ),
-    );
-  }
-
 
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My post List'),
+        title:  Text(AppLocale.My_post_list.getString(context)),
         centerTitle: true,
+        actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LangSelect()));
+                },
+                icon: Icon(Icons.language_outlined)),
+          ],
       ),
       body: Column(
         children: [
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
-             
-
               stream: db
                   .collection('posts')
-                  .where("poster_name", isEqualTo: '${Getcurrentuser.crnt_user}')
+                  .where("poster_name",
+                      isEqualTo: '${Getcurrentuser.crnt_user}')
                   .snapshots(),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) {
@@ -79,20 +61,12 @@ class _mypostlistState extends State<mypostlist> {
                         child: ListTile(
                           title: Text(doc['mentor_domain']),
                           subtitle: Text(doc['mentor_name']),
-                          // trailing: IconButton(
-                          //     onPressed: () async {
-                          //       await FirebaseFirestore.instance
-                          //           .collection("posts")
-                          //           .doc(doc['mentor_email'])
-                          //           .delete();
-                          //     },
-                          //     icon: const Icon(Icons.remove)),
                           trailing: IconButton(
                               onPressed: () async {
                                 await FirebaseFirestore.instance
-                            .collection("posts")
-                            .doc(doc['mentor_email'])
-                            .delete();
+                                    .collection("posts")
+                                    .doc(doc['mentor_email'])
+                                    .delete();
                               },
                               icon: const Icon(Icons.remove)),
                           onTap: () {
@@ -108,7 +82,7 @@ class _mypostlistState extends State<mypostlist> {
                                             },
                                             icon: const Icon(Icons.close))
                                       ],
-                                      title: const Text('My post detail'),
+                                      title: Text(AppLocale.My_post_details.getString(context)),
                                       content: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
@@ -116,8 +90,8 @@ class _mypostlistState extends State<mypostlist> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          const Text(
-                                            "mentor name",
+                                           Text(
+                                            AppLocale.Mentor_name.getString(context),
                                             style: TextStyle(fontSize: 24),
                                           ),
                                           const SizedBox(
@@ -127,8 +101,8 @@ class _mypostlistState extends State<mypostlist> {
                                           const SizedBox(
                                             height: 35,
                                           ),
-                                          const Text(
-                                            "mentor domain",
+                                           Text(
+                                            AppLocale.Mentor_domain.getString(context),
                                             style: TextStyle(fontSize: 24),
                                           ),
                                           const SizedBox(
@@ -138,8 +112,8 @@ class _mypostlistState extends State<mypostlist> {
                                           const SizedBox(
                                             height: 35,
                                           ),
-                                          const Text(
-                                            "mentor email",
+                                           Text(
+                                           AppLocale.Mentor_email.getString(context),
                                             style: TextStyle(fontSize: 24),
                                           ),
                                           const SizedBox(
@@ -149,7 +123,6 @@ class _mypostlistState extends State<mypostlist> {
                                           const SizedBox(
                                             height: 35,
                                           ),
-                                          
                                         ],
                                       ),
                                     ),

@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_localization/flutter_localization.dart';
+import 'package:mentorme/components/language/lang_strings.dart';
+import 'package:mentorme/components/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LangSelect extends StatefulWidget {
   const LangSelect({super.key});
@@ -11,18 +14,17 @@ class LangSelect extends StatefulWidget {
   State<LangSelect> createState() => _LangSelectState();
 }
 
-// List<String> list = <String>['en', 'km', 'ja'];
-
 class _LangSelectState extends State<LangSelect> {
-  // String dropdownValue = list.first;
   final FlutterLocalization localization = FlutterLocalization.instance;
+  List lang_list = ['en', 'tm', 'hi', 'ml'];
+  String value = 'lang';
+  var temp_lang_index = 0;
 
-  String value = 'en';
-  
   List<S2Choice<String>> options = [
-    S2Choice<String>(value: 'en', title: 'en'),
-    S2Choice<String>(value: 'tm', title: 'tm'),
-    S2Choice<String>(value: 'hi', title: 'hi'),
+    S2Choice<String>(value: 'en', title: 'English'),
+    S2Choice<String>(value: 'tm', title: 'Tamil'),
+    S2Choice<String>(value: 'hi', title: 'Hindi'),
+    S2Choice<String>(value: 'ml', title: 'Malayalam'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -39,39 +41,25 @@ class _LangSelectState extends State<LangSelect> {
           mainAxisSize: MainAxisSize.min,
           children: [
             SmartSelect.single(
-
-                selectedValue: value,
-                title: 'Language',
-                choiceItems: options,
-                onChange: (state) => setState(() {
-                      value = state.value;
-                      localization.translate(value);
-                      Navigator.pop(context);
-                    })),
+              selectedValue: value,
+              title: AppLocale.Language.getString(context),
+              choiceItems: options,
+              onChange: (state) => setState(() async {
+                value = state.value;
+                // place_value=state.placeholder!;
+                final prefs = await SharedPreferences.getInstance();
+                await prefs.setString('crnt_lang_code', value);
+                temp_lang_index = lang_list.indexOf(value);
+                print(temp_lang_index);
+                LangPropHandler().getlangindex(temp_lang_index);
+                localization.translate(value);
+                Navigator.pop(context);
+              }),
+              selectedChoice: options[LangPropHandler.lang_index],
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
-/* 
-DropdownButton(
-              value: dropdownValue,
-              icon: const Icon(Icons.arrow_downward),
-              items: list.map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              onChanged: (String? value) {
-                // This is called when the user selects an item.
-                setState(() {
-                  dropdownValue = value!;
-                });
-                localization.translate(dropdownValue);
-                Navigator.pop(context);
-              },
-            ), */

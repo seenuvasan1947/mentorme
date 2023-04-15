@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text(AppLocale.welcome.getString(context)),
+          title: Text(AppLocale.welcome.getString(context)),centerTitle: true,
           actions: [
             IconButton(
                 onPressed: () {
@@ -39,39 +39,42 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.45,
-                child: Image.asset('assets/teach1.jpeg'),
+                child: Image.asset('assets/teach3.jpeg'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Mentor_Reg()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Mentor_Reg()));
                 },
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)))),
-                child: Text("Register as Mentor"),
+                child: Text(AppLocale.Register_as_mentor.getString(context)),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Student_Reg()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Student_Reg()));
                 },
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)))),
-                child: Text("Register as Student"),
+                child: Text(AppLocale.Register_as_student.getString(context)),
               ),
               Divider(thickness: 6),
-              Text('Already a user? Login'),
+              Text(AppLocale.Already_a_user_login.getString(context)),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Loginpage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Loginpage()));
                 },
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)))),
-                child: Text("Login"),
+                child: Text(AppLocale.Login.getString(context)),
               )
             ],
           ),

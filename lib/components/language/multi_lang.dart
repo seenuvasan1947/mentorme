@@ -5,9 +5,8 @@ import 'package:flutter_localization/flutter_localization.dart';
 // import 'package:mentorme/components/language/lang_strings.dart';
 // import 'package:mentorme/screens/welcome_screen.dart';
 import 'package:mentorme/components/language/lang_strings.dart';
+import 'package:mentorme/components/provider.dart';
 import 'package:mentorme/screens/welcome_screen.dart';
-
-
 
 class LangMainPage extends StatefulWidget {
   const LangMainPage({super.key});
@@ -17,16 +16,21 @@ class LangMainPage extends StatefulWidget {
 }
 
 class _LangMainPageState extends State<LangMainPage> {
-   final FlutterLocalization _localization = FlutterLocalization.instance;
+  final FlutterLocalization _localization = FlutterLocalization.instance;
 
   @override
   void initState() {
+    _localization.translate(LangPropHandler.crnt_lang_code);
     _localization.init(
       mapLocales: [
         const MapLocale('en', AppLocale.EN),
         const MapLocale('tm', AppLocale.TM),
         const MapLocale('hi', AppLocale.HI),
+        const MapLocale('ml', AppLocale.ML),
+
+      
       ],
+
       initLanguageCode: 'en',
     );
     _localization.onTranslatedLanguage = _onTranslatedLanguage;
