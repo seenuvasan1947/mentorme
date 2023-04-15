@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:mentorme/components/constants/constants.dart';
+import 'package:mentorme/components/constant.dart';
 import 'package:mentorme/screens/home_screen.dart';
+// import 'package:mentorme/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Loginpage extends StatefulWidget {
@@ -32,7 +33,7 @@ Future<String?> user_login() async {
       
       if (newuser != null) {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const HomeScreen()));
+            MaterialPageRoute(builder: (context) => const HomePage()));
       }
     } catch (e) {
       AlertDialog(
@@ -77,7 +78,7 @@ Future<String?> user_login() async {
               TextField(
                   enableIMEPersonalizedLearning: true,
                   autocorrect: true,
-                  obscureText: false,
+                  obscureText: true,
                   textAlign: TextAlign.center,
                   onChanged: (value) {
                     user_password = value;

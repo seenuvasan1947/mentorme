@@ -8,12 +8,12 @@ mixin AppLocale {
     text: 'amma appa',
     welcome: 'en Welcome',
   };
-  static const Map<String, dynamic> KM = {
+  static const Map<String, dynamic> TM = {
     title: 'ការធ្វើមូលដ្ឋានីយកម្ម',
     text: 'அம்மா அப்பா',
     welcome: 'km Welcome',
   };
-  static const Map<String, dynamic> JA = {
+  static const Map<String, dynamic> HI = {
     title: 'ローカリゼーション',
     text: 'அம்மா1 அப்பா1',
     welcome: 'ja Welcome',

@@ -1,5 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mentorme">
+    <queries>
+        <intent>
+          <action android:name="android.intent.action.SENDTO" />
+          <data android:scheme="mailto" />
+        </intent>
+      </queries>
    <application
         android:label="mentorme"
         android:name="${applicationName}"
@@ -23,6 +29,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.

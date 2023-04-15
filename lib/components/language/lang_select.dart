@@ -21,8 +21,8 @@ class _LangSelectState extends State<LangSelect> {
   
   List<S2Choice<String>> options = [
     S2Choice<String>(value: 'en', title: 'en'),
-    S2Choice<String>(value: 'km', title: 'km'),
-    S2Choice<String>(value: 'ja', title: 'ja'),
+    S2Choice<String>(value: 'tm', title: 'tm'),
+    S2Choice<String>(value: 'hi', title: 'hi'),
   ];
   @override
   Widget build(BuildContext context) {

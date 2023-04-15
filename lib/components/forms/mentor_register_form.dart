@@ -5,8 +5,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:mentorme/components/constants/constants.dart';
+import 'package:mentorme/components/constant.dart';
 import 'package:mentorme/screens/home_screen.dart';
+// import 'package:mentorme/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Mentor_Reg extends StatefulWidget {
@@ -25,12 +26,12 @@ class _Mentor_RegState extends State<Mentor_Reg> {
   late String mentor_address;
   late String mentor_domain;
  final _auth = FirebaseAuth.instance;
-  // late var newuser = null;
-  late var newuser = 123;
+  late var newuser = null;
+  // late var newuser = 123;
   Future<String?> stud_reg() async {
     try {
-      // newuser = await _auth.createUserWithEmailAndPassword(
-      //     email: mentor_email, password: mentor_password);
+      newuser = await _auth.createUserWithEmailAndPassword(
+          email: mentor_email, password: mentor_password);
       FirebaseFirestore.instance.collection("mentors").doc(mentor_email).set({
         'mentor_email': mentor_email,
         'mentor_password': mentor_password,
@@ -47,7 +48,7 @@ class _Mentor_RegState extends State<Mentor_Reg> {
       
       if (newuser != null) {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const HomeScreen()));
+            MaterialPageRoute(builder: (context) => const HomePage()));
       }
     } catch (e) {
       AlertDialog(
@@ -110,7 +111,7 @@ SizedBox(
               TextField(
                   enableIMEPersonalizedLearning: true,
                   autocorrect: true,
-                  obscureText: false,
+                  obscureText: true,
                   textAlign: TextAlign.center,
                   onChanged: (value) {
                     mentor_password = value;

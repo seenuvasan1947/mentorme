@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_localization/flutter_localization.dart';
+// import 'package:mentorme/components/language/lang_strings.dart';
+// import 'package:mentorme/screens/welcome_screen.dart';
 import 'package:mentorme/components/language/lang_strings.dart';
 import 'package:mentorme/screens/welcome_screen.dart';
 
 
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class LangMainPage extends StatefulWidget {
+  const LangMainPage({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<LangMainPage> createState() => _LangMainPageState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _LangMainPageState extends State<LangMainPage> {
    final FlutterLocalization _localization = FlutterLocalization.instance;
 
   @override
@@ -22,8 +24,8 @@ class _MyAppState extends State<MyApp> {
     _localization.init(
       mapLocales: [
         const MapLocale('en', AppLocale.EN),
-        const MapLocale('km', AppLocale.KM),
-        const MapLocale('ja', AppLocale.JA),
+        const MapLocale('tm', AppLocale.TM),
+        const MapLocale('hi', AppLocale.HI),
       ],
       initLanguageCode: 'en',
     );
