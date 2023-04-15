@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "748359252486",
+    "project_id": "mentor-me-d34f7",
+    "storage_bucket": "mentor-me-d34f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748359252486:android:a998113beb3fe125f4a187",
+        "android_client_info": {
+          "package_name": "com.example.mentorme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748359252486-d8mtbu0if9fcbloa0tscvn84e2rchat0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeZr2Wf-1K0i2lofyoVm9z795B24-a2Jo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748359252486-d8mtbu0if9fcbloa0tscvn84e2rchat0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
