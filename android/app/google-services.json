@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "748359252486",
-    "project_id": "mentor-me-d34f7",
-    "storage_bucket": "mentor-me-d34f7.appspot.com"
+    "project_number": "934434657165",
+    "project_id": "mentor-cd69f",
+    "storage_bucket": "mentor-cd69f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:748359252486:android:a998113beb3fe125f4a187",
+        "mobilesdk_app_id": "1:934434657165:android:f1adba3b879e7e09c023c4",
         "android_client_info": {
           "package_name": "com.example.mentorme"
         }
       },
       "oauth_client": [
         {
-          "client_id": "748359252486-d8mtbu0if9fcbloa0tscvn84e2rchat0.apps.googleusercontent.com",
+          "client_id": "934434657165-iv1vbcn6hficikq7pbml79eai2185o79.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCeZr2Wf-1K0i2lofyoVm9z795B24-a2Jo"
+          "current_key": "AIzaSyC5YqDlrREj7sKzPMQnXSfQS8PfbyYMjBs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "748359252486-d8mtbu0if9fcbloa0tscvn84e2rchat0.apps.googleusercontent.com",
+              "client_id": "934434657165-iv1vbcn6hficikq7pbml79eai2185o79.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

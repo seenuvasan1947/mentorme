@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:mentorme/components/language/lang_strings.dart';
-import 'package:mentorme/components/provider.dart';
+import '/components/language/lang_strings.dart';
+import '/components/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LangSelect extends StatefulWidget {

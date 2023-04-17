@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:mentorme/components/constant.dart';
+import '../components/constant.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:mentorme/components/language/lang_strings.dart';
-import 'package:mentorme/components/provider.dart';
+import '../components/language/lang_strings.dart';
+import '../components/provider.dart';
 
 class postaddscreen extends StatefulWidget {
   const postaddscreen({super.key});

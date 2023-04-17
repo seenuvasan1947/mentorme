@@ -1,15 +1,14 @@
+// ignore_for_file: duplicate_import
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:mentorme/components/language/lang_strings.dart';
-import 'package:mentorme/components/constant.dart';
-import 'package:mentorme/components/forms/login_screen.dart';
-import 'package:mentorme/components/forms/mentor_register_form.dart';
-import 'package:mentorme/components/forms/student_registor_form.dart';
-import 'package:mentorme/components/language/lang_select.dart';
-import 'package:mentorme/components/language/lang_strings.dart';
-// import 'package:awesome_select/awesome_select.dart';
+import '../components/language/lang_strings.dart';
+import '../components/forms/login_screen.dart';
+import '../components/forms/mentor_register_form.dart';
+import '../components/forms/student_registor_form.dart';
+import '../components/language/lang_select.dart';
+import '../components/language/lang_strings.dart';
+
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});

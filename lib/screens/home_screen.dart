@@ -5,17 +5,17 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:mentorme/components/language/lang_select.dart';
-import 'package:mentorme/components/language/lang_strings.dart';
-import 'package:mentorme/components/provider.dart';
+import '../components/language/lang_select.dart';
+import '../components/language/lang_strings.dart';
+import '../components/provider.dart';
 
-import 'package:mentorme/components/forms/login_screen.dart';
-import 'package:mentorme/components/provider.dart';
+import '../components/forms/login_screen.dart';
+import '../components/provider.dart';
 
 import 'package:provider/provider.dart';
-import 'package:mentorme/screens/mentor_post_page.dart';
-import 'package:mentorme/screens/post_list.dart';
-import 'package:mentorme/screens/my_post.dart';
+import '../screens/mentor_post_page.dart';
+import '../screens/post_list.dart';
+import '../screens/my_post.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

@@ -4,15 +4,18 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import 'package:mentorme/components/language/multi_lang.dart';
-import 'package:mentorme/components/provider.dart';
-import 'package:mentorme/screens/home_screen.dart';
-import 'package:mentorme/screens/welcome_screen.dart';
+import '../components/language/multi_lang.dart';
+import '../components/provider.dart';
+import '../screens/home_screen.dart';
+import '../screens/welcome_screen.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import 'components/language/multi_lang.dart';
+import 'components/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

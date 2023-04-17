@@ -1,15 +1,12 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
-import 'package:flutter_localization/flutter_localization.dart';
-import 'package:mentorme/components/constant.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:mentorme/components/language/lang_select.dart';
-import 'package:mentorme/components/language/lang_strings.dart';
-import 'package:mentorme/components/provider.dart';
+import 'package:flutter_localization/flutter_localization.dart';
+import '../components/language/lang_select.dart';
+import '../components/language/lang_strings.dart';
+import '../components/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:provider/provider.dart';
 
 class mypostlist extends StatefulWidget {
   const mypostlist({super.key});

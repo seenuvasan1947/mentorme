@@ -4,9 +4,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_localization/flutter_localization.dart';
 // import 'package:mentorme/components/language/lang_strings.dart';
 // import 'package:mentorme/screens/welcome_screen.dart';
-import 'package:mentorme/components/language/lang_strings.dart';
-import 'package:mentorme/components/provider.dart';
-import 'package:mentorme/screens/welcome_screen.dart';
+import '/components/language/lang_strings.dart';
+import '/components/provider.dart';
+import '/screens/welcome_screen.dart';
 
 class LangMainPage extends StatefulWidget {
   const LangMainPage({super.key});

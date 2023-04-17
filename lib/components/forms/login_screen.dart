@@ -3,10 +3,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:mentorme/components/constant.dart';
-import 'package:mentorme/components/language/lang_select.dart';
-import 'package:mentorme/components/language/lang_strings.dart';
-import 'package:mentorme/screens/home_screen.dart';
+import '/components/constant.dart';
+import '/components/language/lang_select.dart';
+import '/components/language/lang_strings.dart';
+import '/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Loginpage extends StatefulWidget {

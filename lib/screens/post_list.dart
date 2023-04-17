@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:flutter_localization/flutter_localization.dart';
-import 'package:mentorme/components/constant.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:mentorme/components/language/lang_select.dart';
-import 'package:mentorme/components/language/lang_strings.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import '../components/language/lang_select.dart';
+import '../components/language/lang_strings.dart';
 
 class postlist extends StatefulWidget {
   const postlist({super.key});
