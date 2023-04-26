@@ -75,11 +75,11 @@ class _postlistState extends State<postlist> {
                     children: snapshot.data!.docs.map((doc) {
                       return Card(
                         child: ListTile(
-                          title: Text(doc['mentor_domain']),
-                          subtitle: Text(doc['mentor_name']),
+                          title: Text(doc['post_domain']),
+                          subtitle: Text(doc['poster_name']),
                           trailing: IconButton(
                               onPressed: () {
-                                send(doc['mentor_email']);
+                                send(doc['poster_mail']);
                               },
                               icon: Icon(Icons.send)),
                           onTap: () {
@@ -95,7 +95,7 @@ class _postlistState extends State<postlist> {
                                             },
                                             icon: const Icon(Icons.close))
                                       ],
-                                      title:  Text(AppLocale.Post_details.getString(context)),
+                                      title:  Text('Post details'),
                                       content: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
@@ -104,46 +104,46 @@ class _postlistState extends State<postlist> {
                                             CrossAxisAlignment.start,
                                         children: [
                                            Text(
-                                           AppLocale.Mentor_name.getString(context),
-                                            style: TextStyle(fontSize: 24),
-                                          ),
-                                          const SizedBox(
-                                            height: 27,
-                                          ),
-                                          Text(doc['mentor_name']),
-                                          const SizedBox(
-                                            height: 35,
-                                          ),
-                                           Text(
-                                            AppLocale.Mentor_domain.getString(context),
-                                            style: TextStyle(fontSize: 24),
-                                          ),
-                                          const SizedBox(
-                                            height: 27,
-                                          ),
-                                          Text(doc['mentor_domain']),
-                                          const SizedBox(
-                                            height: 35,
-                                          ),
-                                           Text(
-                                            AppLocale.Mentor_email.getString(context),
-                                            style: TextStyle(fontSize: 24),
-                                          ),
-                                          const SizedBox(
-                                            height: 27,
-                                          ),
-                                          Text(doc['mentor_email']),
-                                          const SizedBox(
-                                            height: 35,
-                                          ),
-                                           Text(
-                                            AppLocale.Posted_by.getString(context),
+                                           'Poster Name',
                                             style: TextStyle(fontSize: 24),
                                           ),
                                           const SizedBox(
                                             height: 27,
                                           ),
                                           Text(doc['poster_name']),
+                                          const SizedBox(
+                                            height: 35,
+                                          ),
+                                           Text(
+                                            'Post Domain',
+                                            style: TextStyle(fontSize: 24),
+                                          ),
+                                          const SizedBox(
+                                            height: 27,
+                                          ),
+                                          Text(doc['post_domain']),
+                                          const SizedBox(
+                                            height: 35,
+                                          ),
+                                           Text(
+                                            'Posted Data',
+                                            style: TextStyle(fontSize: 24),
+                                          ),
+                                          const SizedBox(
+                                            height: 27,
+                                          ),
+                                          Text(doc['posted_data']),
+                                          const SizedBox(
+                                            height: 35,
+                                          ),
+                                           Text(
+                                            'Posted By',
+                                            style: TextStyle(fontSize: 24),
+                                          ),
+                                          const SizedBox(
+                                            height: 27,
+                                          ),
+                                          Text(doc['poster_mail']),
                                           const SizedBox(
                                             height: 35,
                                           ),
